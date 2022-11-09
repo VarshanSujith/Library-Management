@@ -1,0 +1,19 @@
+.addBookC{ 
+    
+    width: 230px;
+    padding: 10px;
+    border: 5px solid gray;
+    border-style: solid;
+    margin-left: 38%;
+    margin-top: 12%;
+    
+}
+.delBookC{
+    width: 230px;
+    padding: 10px;
+    border: 5px solid gray;
+    border-style: solid;
+    margin-left: 38%;
+    margin-top: 12%;
+    
+}

@@ -1,0 +1,55 @@
+<button mat-raised-button (click)="bookAdd()" style="color: green;">Add Book</button>
+<button mat-raised-button (click)="bookDel()" style="color: red;">Delete Book</button>
+<a button mat-raised-button style="color: blueviolet;" routerLink="/content">Back</a>
+
+<div class="addBookC" [hidden]="showAdd">
+    <mat-form-field hintLabel="Enter the Name of the book" appearance="fill">
+      <mat-label>Book Name</mat-label>
+      <input matInput #Addbookinp maxlength="20" id="Addbookinp" placeholder="Ex. Dr.Anil">
+      <mat-hint align="end">{{Addbookinp.value.length || 0}}/20</mat-hint>
+    </mat-form-field>
+    <br>
+    <br> 
+    <mat-form-field hintLabel="Enter the Name of the Author" appearance="fill">
+        <mat-label>Author Name</mat-label>
+        <input matInput #Addauthorinp maxlength="10" placeholder="Ex. Nougat">
+        <mat-hint align="end">{{Addauthorinp.value.length || 0}}/10</mat-hint>
+      </mat-form-field>
+      <br>
+      <br>
+      <mat-form-field hintLabel="Enter the Published Year" appearance="fill">
+        <mat-label>Published Year</mat-label>
+        <input matInput #Addyearinp maxlength="4" placeholder="Ex. 1985">
+        <mat-hint align="end">{{Addyearinp.value.length || 0}}/4</mat-hint>
+      </mat-form-field>
+      <br> 
+      <br>
+      <mat-form-field hintLabel="Enter the Genre" appearance="fill">
+        <mat-label>Genre</mat-label>
+        <input matInput #Addgenreinp maxlength="15" placeholder="Ex. Comedy">
+        <mat-hint align="end">{{Addgenreinp.value.length || 0}}/15</mat-hint>
+      </mat-form-field>
+    <button mat-flat-button color="primary" (click)="Aval()">Submit</button>&nbsp;&nbsp;&nbsp;
+    <button mat-flat-button color="primary" type="reset" (click)="Reset()">Reset</button>
+  </div>
+
+  <div class="delBookC" [hidden]="showDel">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Number</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+      <br>
+      <button mat-flat-button color="primary" (click)="Dval()">Delete </button>&nbsp;&nbsp;&nbsp;
+      <button mat-flat-button color="primary"(click)="Reset()" >Reset</button>
+  </div>
+  
+  

@@ -1,0 +1,119 @@
+{
+  "bookData": [
+    {
+      "authorName": "Paula Hawkins",
+      "bookName": "The girl on the train",
+      "year": "2015",
+      "genre": "Fiction mystery thriller",
+      "id": 1
+    },
+    {
+      "authorName": "Holly Jackson",
+      "bookName": "A good girls guide to murder",
+      "year": "2019",
+      "genre": "Fiction mystery",
+      "id": 2
+    },
+    {
+      "authorName": "Anand Neelakantan",
+      "bookName": "Asura Tale of the Vanquished",
+      "year": "2015",
+      "genre": "Fiction mythology",
+      "id": 3
+    },
+    {
+      "authorName": "Amit Tripathi",
+      "bookName": "Immortals of Meluha",
+      "year": "2010",
+      "genre": "Fiction mythology",
+      "id": 4
+    },
+    {
+      "authorName": "Harriet Bradley",
+      "bookName": "Gender 2nd edition",
+      "year": "2018",
+      "genre": "Feminism psychology",
+      "id": 5
+    },
+    {
+      "authorName": "Ghazala Jamil",
+      "bookName": "Muslim Women speak of dreams and shackles",
+      "year": "2018",
+      "genre": "Sociology psychoanalysis",
+      "id": 6
+    },
+    {
+      "authorName": "Kalki",
+      "bookName": "Ponniyin selvan",
+      "year": "1954",
+      "genre": "Historical fiction",
+      "id": 7
+    },
+    {
+      "authorName": "Vairamuthuu",
+      "bookName": "Karuvaachi kaviyam",
+      "year": "2012",
+      "genre": "Fiction thriller",
+      "id": 8
+    },
+    {
+      "authorName": "B.Sivaramayya",
+      "bookName": "Matrimonial property law in India",
+      "year": "1999",
+      "genre": "Legal",
+      "id": 9
+    },
+    {
+      "authorName": "Avatar Singh",
+      "bookName": "The constitution of India",
+      "year": "2019",
+      "genre": "Law",
+      "id": 10
+    },
+    {
+      "authorName": "Amish Tripathi",
+      "bookName": "Secret of Nagas",
+      "year": "2011",
+      "genre": "Fiction mythology",
+      "id": 11
+    },
+    {
+      "authorName": "Amish Tripathi",
+      "bookName": "Oath of Vayuputras",
+      "year": "2013",
+      "genre": "Fiction mythology",
+      "id": 12
+    },
+    {
+      "authorName": "Haruki Murakami",
+      "bookName": "Nowegian woods",
+      "year": "1987",
+      "genre": "Literary fiction romance",
+      "id": 13
+    },
+    {
+      "authorName": "Stieg Larsson",
+      "bookName": "The girl with the dragon tattoo",
+      "year": "2005",
+      "genre": "Psychological thriller",
+      "id": 14
+    },
+    {
+      "authorName": "Abhay k",
+      "bookName": "Monsoon",
+      "year": "2022",
+      "genre": "Fiction romance",
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
