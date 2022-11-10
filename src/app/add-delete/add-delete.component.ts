@@ -14,6 +14,7 @@ export class AddDeleteComponent implements OnInit {
   myControl = new FormControl('');
   options: string[] = [];
   filteredOptions!: Observable<string[]>;
+  addimg : string = "assets/changes-l.jpg";
 
   constructor(private api: ApiService, private route: Router) { }
   userSubmitData = { bookName: "", authorName: "", year: "", genre: "" }
@@ -70,7 +71,7 @@ export class AddDeleteComponent implements OnInit {
         })
         this.showAdd =!this.showAdd;
     }
-    window.location.reload();
+    // window.location.reload();
     this.route.navigate(['/content']);
     
   }

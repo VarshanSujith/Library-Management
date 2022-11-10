@@ -5,6 +5,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {FormControl} from '@angular/forms';
 import { ApiService } from '../api.service';
 import { count, map, Observable, startWith } from 'rxjs';
+import { Router } from '@angular/router';
 
 export interface UserData {
   id: string;
@@ -21,7 +22,7 @@ export interface UserData {
 })
 export class ContentComponent implements OnInit {
   dataFromJson !: Array<any>;
-
+  contentImage :string ="assets/content-l.png"
   ngOnInit(): void {
     this.getBooks();
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -41,7 +42,7 @@ export class ContentComponent implements OnInit {
   myControl = new FormControl('');
   options: string[] = [];
   filteredOptions!: Observable<string[]>;
-  constructor(private api:ApiService) {
+  constructor(private api:ApiService,private route : Router) {
     
     
   }
@@ -104,26 +105,8 @@ export class ContentComponent implements OnInit {
   showAdd=true
   showDel=true
   showTable=false
+  homeP(){
+    this.route.navigate(["/"]);
+  }
+  
 }
-
-/** Builds and returns a new User. */
-// function createNewUser(id: number, le: number): UserData {
-//   // const name =
-//   //   NAMES[Math.round(Math.random() * (NAMES.length - 1))] +
-//   //   ' ' +
-//   //   NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) +
-//   //   '.';
-//   return {
-//     id: id.toString(),
-//     authorname: authorS[Math.floor(Math.random() * (le - 0 + 1) + 0)],
-//     year: yearS[Math.floor(Math.random() * (le - 0 + 1) + 0)],
-//     bookname: bookS[Math.floor(Math.random() * (le - 0 + 1) + 0)],
-//     genre : genreS[Math.floor(Math.random() * (le - 0 + 1) + 0)]
-//   };
-  
-//   }
-  
-
-
-/** Constants used to fill up our data base. */
-
