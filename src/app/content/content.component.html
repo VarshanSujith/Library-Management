@@ -4,7 +4,7 @@
     <span class="example-spacer"></span>
     <a button mat-flat-button routerLink="/content/alterbook" color="primary" >Changes</a>
     <button mat-flat-button [matMenuTriggerFor]="filter" color="primary" >Filter</button>
-    <!-- <a button mat-flat-button routerLink="/" color="primary" >Reset</a> -->
+    
   <mat-menu #filter="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="NameAuthor">Author Name</button>
     <button mat-menu-item [matMenuTriggerFor]="YearPublished">Published Year</button>
@@ -28,41 +28,33 @@
   </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
-<div class="contentImagediv">
-  <img [src]="contentImage" alt=""class="contentImage">
-</div>  
-
+ <mat-icon [ngStyle]="{'color':'white'}" id="sText" >search</mat-icon>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Shiva" #input [hidden]="showTable" id="filt">
 <div class="mat-elevation-z8" id="bookList" [hidden]="showTable">
-  <div id="searchContainer" style="background-color: white;">
-    <h1 style="width: 20px;">Search</h1>
-    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Shiva" #input [hidden]="showTable" id="filt">
-  </div>
-  <table mat-table [dataSource]="dataSource" matSort style="width: 100%;">
+  
+  <table mat-table [dataSource]="dataSource"   style="width: 100%;">
     <ng-container matColumnDef="id" style="width: 10%;">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(0)" style="color:orange; padding-left: 0%;"> ID <mat-icon></mat-icon></button>  </th>
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="authorname" style="width: 20%;">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> AuthorName </th>
-      <td mat-cell *matCellDef="let row"> {{row.authorName}} </td>
-    </ng-container>
-
-
-    <ng-container matColumnDef="bookname" style="width: 30%;">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> BookName </th>
+    <ng-container matColumnDef="bookName"  style="width: 30%;">
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(1)" style="color:orange; padding-left: 0%;"> Book Name <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.bookName}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="authorName" style="width: 20%;">
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(2)" style="color:orange; padding-left: 0%;"> Author Name <mat-icon></mat-icon></button> </th>
+      <td mat-cell *matCellDef="let row"> {{row.authorName}} </td>
+    </ng-container>
    
     <ng-container matColumnDef="genre" style="width: 30%;">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Genre </th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(3)" style="color:orange; padding-left: 0%;"> Genre <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.genre}} </td>
     </ng-container>
 
-    
     <ng-container matColumnDef="year" style="width: 10%;">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Year </th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(4)" style="color:orange; padding-left: 0%;"> Year <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.year}} </td>
     </ng-container>
 
@@ -75,7 +67,11 @@
     </tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]" aria-label="Select page of users"  style="color:orange"></mat-paginator>
 </div>
 <br>
 <br>
+
+
+
+<!-- let i=index -->

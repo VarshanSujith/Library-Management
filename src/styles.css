@@ -9,7 +9,13 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center; */
+  background-image: url('assets/Alterr.png');
+  background-position: cover;
+  background-attachment: fixed;
 }
 button{
     padding-right: 5%;
+}
+*{
+  user-select: none;
 }
