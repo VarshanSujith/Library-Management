@@ -4,7 +4,7 @@
     <span class="example-spacer"></span>
     <a button mat-flat-button routerLink="/content/alterbook" color="primary" >Changes</a>
     <button mat-flat-button [matMenuTriggerFor]="filter" color="primary" >Filter</button>
-    
+
   <mat-menu #filter="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="NameAuthor">Author Name</button>
     <button mat-menu-item [matMenuTriggerFor]="YearPublished">Published Year</button>
@@ -32,29 +32,29 @@
   <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Shiva" #input [hidden]="showTable" id="filt">
 <div class="mat-elevation-z8" id="bookList" [hidden]="showTable">
   
-  <table mat-table [dataSource]="dataSource"   style="width: 100%;">
+  <table mat-table [dataSource]="dataSource">
     <ng-container matColumnDef="id" style="width: 10%;">
-      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(0)" style="color:orange; padding-left: 0%;"> ID <mat-icon></mat-icon></button>  </th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(0)" style="background-color: rgba(255, 255, 255, 0.1);color:white"> ID <mat-icon></mat-icon></button>  </th>
       <td mat-cell *matCellDef="let row"> {{row.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="bookName"  style="width: 30%;">
-      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(1)" style="color:orange; padding-left: 0%;"> Book Name <mat-icon></mat-icon></button></th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(1)"style="background-color: rgba(255, 255, 255, 0.1);color:white" > Book Name <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.bookName}} </td>
     </ng-container>
 
     <ng-container matColumnDef="authorName" style="width: 20%;">
-      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(2)" style="color:orange; padding-left: 0%;"> Author Name <mat-icon></mat-icon></button> </th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(2)"style="background-color: rgba(255, 255, 255, 0.1);color:white"> Author Name <mat-icon></mat-icon></button> </th>
       <td mat-cell *matCellDef="let row"> {{row.authorName}} </td>
     </ng-container>
    
     <ng-container matColumnDef="genre" style="width: 30%;">
-      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(3)" style="color:orange; padding-left: 0%;"> Genre <mat-icon></mat-icon></button></th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(3)"style="background-color: rgba(255, 255, 255, 0.1);color:white"> Genre <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.genre}} </td>
     </ng-container>
 
     <ng-container matColumnDef="year" style="width: 10%;">
-      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(4)" style="color:orange; padding-left: 0%;"> Year <mat-icon></mat-icon></button></th>
+      <th mat-header-cell *matHeaderCellDef > <button mat-flat-button (click)="arrowchange(4)"style="background-color: rgba(255, 255, 255, 0.1);color:white"> Year <mat-icon></mat-icon></button></th>
       <td mat-cell *matCellDef="let row"> {{row.year}} </td>
     </ng-container>
 
@@ -67,7 +67,7 @@
     </tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 15]" aria-label="Select page of users"  style="color:orange"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 15]"></mat-paginator>
 </div>
 <br>
 <br>

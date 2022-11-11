@@ -6,7 +6,6 @@ import { FormControl } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { map, Observable, startWith } from 'rxjs';
 import { Router } from '@angular/router';
-import { I18NHtmlParser } from '@angular/compiler';
 
 export interface UserData {
   id: string;
@@ -84,7 +83,7 @@ export class ContentComponent implements OnInit {
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
           // console.log(this.dataSource.sort);
-          // this.pushDynamicData();
+          this.pushDynamicData();
         },
         error: () => {
           console.log('From GetData', 'Error');
@@ -92,10 +91,6 @@ export class ContentComponent implements OnInit {
       })
   }
 
-  // ngAfterViewInit() {
-  // this.dataSource.paginator = this.paginator;
-  // this.dataSource.sort = this.sort;
-  // }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -109,12 +104,11 @@ export class ContentComponent implements OnInit {
   homeP() {
     // this.route.navigate(["/content"]);
     window.location.reload();
-
-
   }
-  orderby !: string
-  imagechange(target : number){
-    
+
+
+orderby !: string
+imagechange(target : number){    
     if(this.imagecounter[target]<2){
       this.imagecounter[target]+=1
       document.getElementsByTagName("mat-icon")[target+1].innerHTML=this.arrowstyle[this.imagecounter[target]];
@@ -134,7 +128,7 @@ export class ContentComponent implements OnInit {
 
     }
   }
-  getSortData(columnName : string,orderby : string) {
+getSortData(columnName : string,orderby : string) {
     this.api.getSortData(columnName,orderby)
       .subscribe({
         next: (res) => {
@@ -151,9 +145,7 @@ export class ContentComponent implements OnInit {
       })
   }
 
-
-  arrowchange(target: number){
-
+arrowchange(target: number){
     switch(target){
       case 0:
         this.imagechange(target);
@@ -174,7 +166,6 @@ export class ContentComponent implements OnInit {
       case 4:
         this.imagechange(target);
         break;
-
     }
     
   }

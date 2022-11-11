@@ -4,13 +4,6 @@
   margin:10% 2% 0% 10%;
 }
 #filt{
-/* 
-  border-radius: 2px;
-  border: 1px solid orange;
-  background-color: blueviolet;
-  height: 25px;
-  padding: 5px;
-   width: 420px; */
   width: 30%;
   height: 39px;
   margin: 0% 0% 0% 0%;
@@ -28,31 +21,30 @@
   height: 33px;
   margin: 1% 0% 0% 37%;
   font-size: 33px;
-    /* width: 2px;
-    position: relative;
-    right: 30px;
-    font-size: 20px;
-    line-height: 40px;
-    cursor: pointer;
-    z-index: 1;
-    color: white; */
-
-
 } 
 .mat-header-cell{
-  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  color:white;
+  padding-left: 0%;
 }
+.mat-cell{
+  color:white;
+}
+.mat-table{
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px);
+  color:white; 
+  padding-left: 0%;  
+}
+.mat-paginator{
+  background-color: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(5px); 
+  color:white
+}
+
 .example-spacer {
   flex: 1 1 auto;
 }
-/* .contentImage{
-  top: 0%;
- z-index: -1; 
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-.contentImagediv{
-  overflow: hidden;
-  background-attachment: fixed;
-} */
+
